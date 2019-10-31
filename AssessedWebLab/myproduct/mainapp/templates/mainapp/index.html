@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head><title>Product List</title></head>
+    <body>
+
+      <h2>Products</h2>
+      <ul id="products">
+        {% for product in products %}
+          <li class="li" id="{{product.id}}">{{product.name}}<button class="delBut" type="button">             Delete </button></li>
+        {% endfor %}
+      </ul>
+
+      <h2 class="currentProduct">Update a Product</h2>
+      Name: <input type="text" id="newName">
+      <br />
+      Description: <input type="text" id="newDesc">
+      <br />
+      Price: <input type="text" id="newPrice">
+      <br />
+      <button id="update" type="button">Update Product</button>
+
+      <h2>Add a new Product</h2>
+      Name: <input id="addName" type="text">
+      <br />
+      Description: <input id="addDesc" type="text">
+      <br />
+      Price: <input id="addPrice" type="text">
+      <br />
+      <button id="addProduct" type="button">Add a new product</button>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="{% static 'mainapp/scripts.js' %}"></script>
+    </body>
+</html>
